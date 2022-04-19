@@ -3,6 +3,7 @@ export class Article {
     private _id: string,
     private _title: string,
     private _body: string,
+    private _category: string,
     private _date: string
   ) {}
 
@@ -36,5 +37,13 @@ export class Article {
 
   public set date(date: string) {
     this._date = date;
+  }
+
+  public get category(): string {
+    return this._category;
+  }
+
+  public set category(category: string) {
+    this._category = category;
   }
 }
