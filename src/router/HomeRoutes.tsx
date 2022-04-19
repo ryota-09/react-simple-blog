@@ -1,6 +1,7 @@
 import { ArticleDetail } from "../components/pages/ArticleDetail";
 import { ArticleList } from "../components/pages/ArticleList";
-import { EditArticl } from "../components/pages/EditArticle";
+import { EditArticle } from "../components/pages/EditArticle";
+import { UpdateArticle } from "../components/pages/UpdateArticle";
 
 export const homeRoutes = [
   {
@@ -11,11 +12,16 @@ export const homeRoutes = [
   {
     path: "/editArticle",
     exact: false,
-    children: <EditArticl />
+    children: <EditArticle />
   },
   {
     path: "/articleDetail",
     exact: false,
     children: <ArticleDetail />
+  },
+  {
+    path: "/updateArticle",
+    exact: false,
+    children: <UpdateArticle />
   },
 ];

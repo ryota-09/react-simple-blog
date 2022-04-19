@@ -1,4 +1,4 @@
-export const EditArticl = () => {
+export const EditArticle = () => {
   return (
     <>Editページ</>
   )
