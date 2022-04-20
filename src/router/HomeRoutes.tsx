@@ -15,12 +15,12 @@ export const homeRoutes = [
     children: <EditArticle />
   },
   {
-    path: "/articleDetail",
+    path: "/articleDetail/:id",
     exact: false,
     children: <ArticleDetail />
   },
   {
-    path: "/updateArticle",
+    path: "/updateArticle/:id",
     exact: false,
     children: <UpdateArticle />
   },

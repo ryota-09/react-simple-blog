@@ -4,23 +4,25 @@ import {
   Grid,
   GridItem,
   Image,
-  Link,
   Spacer,
   Stack,
   Text,
 } from "@chakra-ui/react";
 import { FC } from "react";
+import { Link } from "react-router-dom";
+import { Article } from "../../types/article";
 
 type Props = {
   id: string;
-  title: string;
-  body: string;
+  h1tag: string;
+  lead: string;
+  imgPath: string;
   category: string;
   date: string;
 };
 
 export const ArticleCard: FC<Props> = (props) => {
-  const { id, title, body, category, date } = props;
+  const { id, h1tag, lead , imgPath, category, date } = props;
   return (
     <>
       <Box
@@ -36,22 +38,15 @@ export const ArticleCard: FC<Props> = (props) => {
           <Text fontWeight="thin" color="gray.500">
             {date}
           </Text>
-          <Link
-            mt={1}
-            display="block"
-            fontSize="lg"
-            lineHeight="normal"
-            fontWeight="extrabold"
-            href="#"
-          >
-            {title}
+          <Link to={"/articleDetail/" + id}>
+            <Text fontWeight="extrabold" fontSize={30}>{h1tag}</Text>
           </Link>
-          <Text fontWeight="normal">{body}</Text>
+          <Text fontWeight="normal">{lead}</Text>
         </Box>
         <Spacer />
         <Box flexShrink={0}>
           <Image
-            src="/img_category/pc.jpg"
+            src={imgPath}
             width={{ sm: 200 }}
             borderRadius="lg"
           />

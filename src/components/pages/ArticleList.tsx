@@ -14,10 +14,12 @@ export const ArticleList = () => {
       <Header />
       {articleList.map((article) => (
         <ArticleCard
+          key={article.id}
           id={article.id}
-          title={article.title}
-          body={article.body}
+          h1tag={article.h1tag}
+          lead={article.lead}
           category={article.category}
+          imgPath={article.imgPath}
           date={article.date}
         />
       ))}
