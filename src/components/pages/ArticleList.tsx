@@ -32,8 +32,8 @@ export const ArticleList = () => {
           ))}
         </GridItem>
         <GridItem w="100%" colSpan={3}>
-        <Input bg="yellow.100" />
-        <Button colorScheme="green">検索</Button>
+        <Input bg="white" />
+        <Button colorScheme="teal" mt={2}>検索</Button>
         </GridItem>
         <GridItem w="100%" colSpan={1} />
       </Grid>
