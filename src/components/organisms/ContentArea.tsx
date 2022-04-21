@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Box, Stack, Text, Center } from "@chakra-ui/react";
 import { FC, useEffect } from "react";
 import { useParams } from "react-router-dom";

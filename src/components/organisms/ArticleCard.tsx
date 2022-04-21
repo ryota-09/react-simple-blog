@@ -19,7 +19,7 @@ type Props = {
 };
 
 export const ArticleCard: FC<Props> = (props) => {
-  const { id, h1tag, lead, imgPath, category, date } = props;
+  const { id, h1tag, lead, imgPath, date } = props;
 
   const history = useHistory();
 
