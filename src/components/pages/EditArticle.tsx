@@ -1,6 +1,5 @@
 import {
   FormControl,
-  FormHelperText,
   FormLabel,
   Input,
   Textarea,
@@ -70,13 +69,21 @@ export const EditArticle = () => {
     history.push("/");
   };
   const setTest = () => {
-    setArticleh1tag("タイトル");
-    setArticleLead("リード文");
+    setArticleh1tag(
+      "プログラミング言語の選び方と今学習すべきおすすめ言語ランキング【最新】"
+    );
+    setArticleLead(
+      "この記事では、これからプログラミング言語を学ぼうと考えている“初心者のITエンジニア”に向けて、知っておきたいログラミング言語の基本を解説します。"
+    );
     setArticleCategory("カテゴリー");
-    setArticleh2tag1("サブタイトル１");
-    setArticleText1("ボディー１");
-    setArticleh2tag2("サブタイトル2");
-    setArticleText2("ボディー2");
+    setArticleh2tag1("そもそもプログラミング言語とは？");
+    setArticleText1(
+      "プログラミング言語を説明する前に、プログラムについて確認しておきましょう。プログラムとは、日本語訳すると「物事を行う手順」のことです。IT業界で使われるプログラムとは「コンピュータがするべき仕事の手順や内容が書いてあるもの」と理解しておきましょう。"
+    );
+    setArticleh2tag2("初心者におすすめ・比較的簡単な言語ランキングTOP3");
+    setArticleText2(
+      "需要があるとはいえ、いきなり初心者が難易度の高い言語を学び始めると挫折の原因になってしまいます。ここでは初心者にもおすすめできるプログラミング言語トップ3を見ていきましょう。"
+    );
   };
   return (
     <>

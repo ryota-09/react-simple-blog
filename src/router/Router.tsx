@@ -1,9 +1,12 @@
 import { Route, Switch } from "react-router-dom";
 import { homeRoutes } from "./HomeRoutes";
 
+import { Header } from "../components/organisms/Header"
+
 export const Router = () => {
   return (
     <>
+    <Header />
       <Switch>
         <Route
           path="/"
