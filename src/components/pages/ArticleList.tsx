@@ -4,6 +4,7 @@ import {
   Grid,
   GridItem,
   Input,
+  Image
 } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useArticleList } from "../../hooks/useArticleList";
@@ -35,6 +36,7 @@ export const ArticleList = () => {
         <GridItem w="100%" colSpan={3}>
         <Input bg="white" />
         <Button colorScheme="teal" mt={2}>検索</Button>
+        <Image src="/img_category/nestjs.png"  pt={10}/>
         </GridItem>
         <GridItem w="100%" colSpan={1} />
       </Grid>

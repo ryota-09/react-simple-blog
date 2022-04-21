@@ -5,6 +5,11 @@ import {
   Textarea,
   Text,
   Button,
+  Center,
+  Box,
+  Heading,
+  Grid,
+  GridItem,
 } from "@chakra-ui/react";
 import axios from "axios";
 import { ChangeEvent, useState } from "react";
@@ -87,31 +92,90 @@ export const EditArticle = () => {
   };
   return (
     <>
-      <FormControl>
-        <FormLabel htmlFor="titlelabel">Article Title</FormLabel>
-        <Input id="titlelabel" type="text" onChange={onChangeh1tag} />
-        <FormLabel htmlFor="titlelabel">Category</FormLabel>
-        <Input id="titlelabel" type="text" onChange={onChangeCategory} />
-        <FormLabel htmlFor="titlelabel">Lead Sentence</FormLabel>
-        <Input id="titlelabel" type="text" onChange={onChangeLead} />
-        <FormLabel htmlFor="titlelabel">SubTitle</FormLabel>
-        <Input id="titlelabel" type="text" onChange={onChangeh2tag1} />
-        <Text mb="8px">Body:</Text>
-        <Textarea onChange={onChangeText1} />
-        <FormLabel htmlFor="titlelabel">SubTitle</FormLabel>
-        <Input id="titlelabel" type="text" onChange={onChangeh2tag2} />
-        <Text mb="8px">Body:</Text>
-        <Textarea onChange={onChangeText2} />
-        <Button colorScheme="green" onClick={postArticle}>
-          投稿
-        </Button>
-        <Button onClick={backToList} colorScheme="blue">
-          一覧に戻る
-        </Button>
-        <Button onClick={setTest} colorScheme="pink">
-          テストボタン
-        </Button>
-      </FormControl>
+      <Grid templateColumns="repeat(12, 1fr)" gap={6}>
+        <GridItem w="100%" colSpan={1} />
+        <GridItem w="100%" colSpan={10}>
+          <Box
+            p={7}
+            pb={30}
+            display={{ md: "flex" }}
+            bg="white"
+            borderRadius={10}
+            mb={4}
+          >
+            <FormControl>
+              <Center>
+                <Heading>Create Ariticle</Heading>
+              </Center>
+              <FormLabel mt={5} htmlFor="titlelabel">
+                Article Title
+              </FormLabel>
+              <Input
+                id="titlelabel"
+                type="text"
+                onChange={onChangeh1tag}
+                value={articleh1tag}
+              />
+              <FormLabel htmlFor="titlelabel" mt={5}>
+                Category
+              </FormLabel>
+              <Input
+                id="titlelabel"
+                type="text"
+                onChange={onChangeCategory}
+                value={articleCategory}
+              />
+              <FormLabel htmlFor="titlelabel" mt={5}>
+                Lead Sentence
+              </FormLabel>
+              <Input
+                id="titlelabel"
+                type="text"
+                onChange={onChangeLead}
+                value={articleLead}
+              />
+              <FormLabel htmlFor="titlelabel" mt={5}>
+                SubTitle
+              </FormLabel>
+              <Input
+                id="titlelabel"
+                type="text"
+                onChange={onChangeh2tag1}
+                value={articleh2tag1}
+              />
+              <Text mb="8px" mt={5}>
+                Body:
+              </Text>
+              <Textarea onChange={onChangeText1} value={articleText1} />
+              <FormLabel htmlFor="titlelabel" mt={5}>
+                SubTitle
+              </FormLabel>
+              <Input
+                id="titlelabel"
+                type="text"
+                onChange={onChangeh2tag2}
+                value={articleh2tag2}
+              />
+              <Text mb="8px" mt={5}>
+                Body:
+              </Text>
+              <Textarea onChange={onChangeText2} value={articleText2} />
+              <Center>
+                <Button colorScheme="green" onClick={postArticle} m={5}>
+                  投稿
+                </Button>
+                <Button onClick={backToList} m={5} colorScheme="blue">
+                  一覧に戻る
+                </Button>
+                <Button onClick={setTest} m={5} colorScheme="pink">
+                  テストボタン
+                </Button>
+              </Center>
+            </FormControl>
+          </Box>
+        </GridItem>
+        <GridItem w="100%" colSpan={1} />
+      </Grid>
     </>
   );
 };

@@ -11,11 +11,18 @@ import {
   Textarea,
 } from "@chakra-ui/react";
 import axios from "axios";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, Dispatch, FC, SetStateAction, useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { useCurrentArticle } from "../../hooks/useCurrentArticle";
 
-export const EditArea = () => {
+type Props = {
+  canShow: boolean;
+  setCanShow: Dispatch<SetStateAction<boolean>>;
+}
+
+export const EditArea: FC<Props> = (props) => {
+  const { canShow, setCanShow } = props;
+
   const [articleh1tag, setArticleh1tag] = useState("");
   const [articleLead, setArticleLead] = useState("");
   const [articleCategory, setArticleCategory] = useState("");
@@ -86,6 +93,7 @@ export const EditArea = () => {
       }
     );
     console.log(response.data);
+    setCanShow(!canShow);
   };
 
   const deleteArticle = async () => {
@@ -94,10 +102,6 @@ export const EditArea = () => {
         currentArticle?.id
     );
     console.log(response.data);
-    history.push("/");
-  };
-
-  const backToList = () => {
     history.push("/");
   };
   return (
@@ -167,15 +171,14 @@ export const EditArea = () => {
             Body:
           </Text>
           <Textarea onChange={onChangeText2} value={articleText2} />
-          <Button colorScheme="green" onClick={updateArticle}>
+          <Center>
+          <Button colorScheme="teal" m={5} onClick={updateArticle}>
             更新
           </Button>
-          <Button onClick={backToList} colorScheme="blue">
-            一覧に戻る
-          </Button>
-          <Button colorScheme="red" onClick={deleteArticle}>
+          <Button colorScheme="red" m={5} onClick={deleteArticle}>
             削除
           </Button>
+          </Center>
         </FormControl>
       </Box>
     </>

@@ -7,7 +7,7 @@ export const ArticleDetail = () => {
   const [canShow, setCanShow] = useState(false);
 
   const showEditArea = () => {
-    setCanShow(true);
+    setCanShow(!canShow);
   };
   return (
     <>
@@ -15,11 +15,11 @@ export const ArticleDetail = () => {
         <GridItem w="100%" colSpan={1} />
         <GridItem w="100%" colSpan={10}>
           <Button colorScheme="teal" onClick={showEditArea}>
-            記事を編集する
+            { canShow ? "編集画面を閉じる" : "記事を編集する" }
           </Button>
           {canShow ? (
             <Box mt={5}>
-              <EditArea />
+              <EditArea  canShow={canShow} setCanShow={setCanShow} />
             </Box>
           ) : (
             <Box mt={5}>

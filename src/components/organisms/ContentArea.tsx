@@ -10,7 +10,7 @@ export const ContentArea: FC = () => {
 
   useEffect(() => {
     getArticleById(params.id);
-  }, []);
+  }, [currentArticle]);
   return (
     <>
       <Box
